@@ -33,5 +33,10 @@ FundLink is a Laravel web application developed as a Final Year Project to help 
    - `php artisan serve`
 
 ## Screenshots
+![Login](<img width="603" height="387" alt="image" src="https://github.com/user-attachments/assets/75d49776-dad3-4746-b447-5ec04b5ca7f2" />)
+![Dashboard](screenshots/dashboard.png)
+![Transaction](screenshots/transaction.png)
+![Shared Account](screenshots/shared-account.png)
+![Statement](screenshots/statement.png)
 <img width="603" height="387" alt="image" src="https://github.com/user-attachments/assets/75d49776-dad3-4746-b447-5ec04b5ca7f2" />
 
