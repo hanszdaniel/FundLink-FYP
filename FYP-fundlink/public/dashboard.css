@@ -1,0 +1,615 @@
+/* =========================================================
+   GLOBAL VARIABLES & STYLES
+========================================================= */
+:root {
+  --primary-blue: #3A478C;
+  --dark-text: #1A2350;
+  --light-grey-bg: #F8F9FA;
+  --white: #fff;
+  --border-color: #ddd;
+  --status-success: #5cb85c;
+  --status-warning: #f0ad4e;
+  --status-danger: #d9534f;
+  --copy-btn-bg: #eef2ff;
+  --copy-btn-border: #c7d2fe;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+* {
+   color: #aaa;
+   font-size: 28px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+body {
+  background-color: var(--light-grey-bg);
+  min-height: 100vh;
+  color: var(--dark-text);
+}
+
+/* =========================================================
+   HEADER & NAVIGATION
+========================================================= */
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 4rem;
+}
+
+.header-container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-text);
+}
+
+.header-logo {
+  width: 35px;
+  margin-right: 8px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--dark-text);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--dark-text);
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background-color: var(--light-grey-bg);
+}
+
+.nav-item.active {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.header-actions {
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 8px 0;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    z-index: 40;
+  }
+  .main-nav a {
+    width: 100%;
+    text-align: left;
+    padding: 11px 16px;
+    border-radius: 0;
+    font-weight: 500;
+  }
+  .main-nav a:not(:last-child) { border-bottom: 1px solid #f0f2f7; }
+}
+
+/* =========================================================
+   MAIN DASHBOARD LAYOUT
+========================================================= */
+.dashboard-main {
+  padding: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.welcome-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 640px) {
+  .welcome-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.welcome-bar h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.welcome-bar h1 span {
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn-primary,
+.btn-secondary,
+.btn-generate,
+.btn-copy {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 15px;
+}
+
+@media (min-width: 640px) {
+  .btn-primary {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+.btn-secondary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 7px 12px;
+}
+
+.btn-secondary:hover {
+  background-color: #313d78;
+}
+
+.btn-generate {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-generate:hover {
+  background-color: #313d78;
+}
+
+.btn-copy {
+  background-color: var(--copy-btn-bg);
+  color: var(--primary-blue);
+  border: 1px solid var(--copy-btn-border);
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-copy:hover {
+  background-color: #d8e0ff;
+}
+
+@media (min-width: 640px) {
+  .btn-copy {
+    width: auto;
+  }
+}
+
+/* =========================================================
+   WIDGET GRID
+========================================================= */
+.widget-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+@media (min-width: 1024px) {
+  .widget-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.widget {
+  background-color: var(--white);
+  padding: 25px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.widget h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  display: flex;
+  align-items: center;
+}
+
+.widget h2 .fas {
+  color: var(--primary-blue);
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.info-text {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   ACCOUNT WIDGET
+========================================================= */
+.account-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  background-color: var(--light-grey-bg);
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 640px) {
+  .account-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.budget-info,
+.members {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.budget-info .amount {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+  position: relative; /* For dropdown positioning */
+}
+
+@media (min-width: 640px) {
+  .card-actions {
+    margin-top: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-actions > .btn-copy {
+    order: 1;
+    margin-top: 0;
+  }
+
+  .card-actions > .menu-icon {
+    order: 2;
+  }
+}
+
+.menu-icon {
+  color: #999;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s;
+  font-size: 1.2rem;
+  display: inline-block;
+  z-index: 21;
+}
+
+.menu-icon:hover {
+  color: var(--primary-blue);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 150px;
+  z-index: 20;
+  display: none;
+  margin-top: 5px;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--dark-text);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: var(--light-grey-bg);
+}
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+.status {
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 5px;
+  border: 1px solid transparent;
+}
+
+.status-in-limit {
+  background-color: #e6f7e6;
+  color: var(--status-success);
+  border-color: var(--status-success);
+}
+
+.status-near-limit {
+  background-color: #fff8e6;
+  color: var(--status-warning);
+  border-color: var(--status-warning);
+}
+
+/* =========================================================
+   REPORT WIDGET CONTROLS
+========================================================= */
+.report-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.report-controls label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--dark-text);
+  margin-bottom: 5px;
+}
+
+.select-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  background-color: var(--light-grey-bg);
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   SUMMARY WIDGET
+========================================================= */
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+  min-height: 280px;
+}
+
+@media (min-width: 768px) {
+  .summary-content {
+    flex-direction: row;
+  }
+}
+
+.breakdown-list {
+  flex: 1;
+  padding: 10px 0;
+  max-width: 50%;
+}
+
+.chart-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-height: 250px;
+}
+
+@media (min-width: 768px) {
+  .breakdown-list {
+    max-width: none;
+  }
+
+  .chart-area {
+    max-width: 50%;
+  }
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.9rem;
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+.category-details {
+  display: flex;
+  align-items: center;
+}
+
+.color-dot {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+
+.total-expenses {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.total-expenses .label {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.total-expenses .total-amount {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+/* =========================================================
+   STATUS WIDGET
+========================================================= */
+.status-card {
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.status-icon {
+  color: var(--primary-blue);
+  font-size: 1.1rem;
+}
+
+.status-label {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.status-header .status {
+  margin-left: auto;
+}
+
+.budget-details {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.progress-bar-container {
+  background-color: #e5e7eb;
+  height: 8px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+.status-card:nth-child(1) .progress-bar {
+  background-color: var(--status-warning);
+}
+
+.status-card:nth-child(2) .progress-bar {
+  background-color: var(--status-success);
+}
+
+.usage-percent {
+  font-size: 0.8rem;
+  color: var(--dark-text);
+  font-weight: 500;
+}
