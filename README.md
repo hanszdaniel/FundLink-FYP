@@ -33,4 +33,5 @@ FundLink is a Laravel web application developed as a Final Year Project to help 
    - `php artisan serve`
 
 ## Screenshots
-(Coming soon)
+<img width="603" height="387" alt="image" src="https://github.com/user-attachments/assets/75d49776-dad3-4746-b447-5ec04b5ca7f2" />
+
