@@ -32,6 +32,14 @@ FundLink is a Laravel web application developed as a Final Year Project to help 
 7. Start the app:
    - `php artisan serve`
 
+## Demo Video
+
+🎥 **System Montage Video (FundLink – Final Year Project)**  
+This video demonstrates the main features of FundLink, including login, dashboard overview, transaction management, shared account functionality, and PDF statement generation.
+
+👉 Watch here:  
+https://drive.google.com/drive/folders/1NK9EmuCLHbLTtCSbtHKzsRxsb3SULhIt?usp=drive_link
+
 ## Screenshots
 
 ### Login Page
