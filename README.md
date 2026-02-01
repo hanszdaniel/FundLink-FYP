@@ -33,20 +33,22 @@ FundLink is a Laravel web application developed as a Final Year Project to help 
    - `php artisan serve`
 
 ## Screenshots
-Login
-<img width="603" height="387" alt="image" src="https://github.com/user-attachments/assets/75d49776-dad3-4746-b447-5ec04b5ca7f2" />
 
-Dashboard
-<img width="602" height="411" alt="image" src="https://github.com/user-attachments/assets/c1609ec8-0a04-4098-9d30-914fa812d4bb" />
+### Login Page
+<img src="https://github.com/user-attachments/assets/75d49776-dad3-4746-b447-5ec04b5ca7f2" width="700"/>
 
-Transaction
-<img width="603" height="409" alt="image" src="https://github.com/user-attachments/assets/caf26f56-68aa-449d-a4a1-df8897b4720a" />
+### Dashboard
+<img src="https://github.com/user-attachments/assets/c1609ec8-0a04-4098-9d30-914fa812d4bb" width="700"/>
 
-Shared Account
-<img width="603" height="278" alt="image" src="https://github.com/user-attachments/assets/da6075f4-577e-42ff-9851-ed2e0a2bc07b" />
+### Add Transaction
+<img src="https://github.com/user-attachments/assets/caf26f56-68aa-449d-a4a1-df8897b4720a" width="700"/>
 
-Statement
-<img width="494" height="473" alt="image" src="https://github.com/user-attachments/assets/8105d885-3dd1-4205-b881-4bf818946105" />
+### Shared Account
+<img src="https://github.com/user-attachments/assets/da6075f4-577e-42ff-9851-ed2e0a2bc07b" width="700"/>
+
+### PDF Statement
+<img src="https://github.com/user-attachments/assets/8105d885-3dd1-4205-b881-4bf818946105" width="600"/>
+
 
 
 
